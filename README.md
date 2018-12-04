@@ -44,7 +44,7 @@ by adding `carry` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:carry, "~> 0.1.0"}
+    {:carry, "~> 0.1"}
   ]
 end
 ```
