@@ -26,7 +26,7 @@ Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{})
 We will get back:
 
 ```elixir
-%Instrument{carillon: "sound"
+%Instrument{carillon: "sound"}
 ```
 
 This is usually useful when having a decoded payload from json (a map) and
