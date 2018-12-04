@@ -1,6 +1,6 @@
 # Carry
 
-Carry is a super simple, dependency free package that transforms a map in this
+Carry is a super simple, dependency free package that transforms a map from this
 form:
 
 ```elixir
@@ -30,7 +30,7 @@ We will get back:
 ```
 
 This is usually useful when having a decoded payload from json (a map) and
-we want to convert to an Elixir `struct.
+we want to convert to an Elixir `struct`.
 
 ### Credits
 
