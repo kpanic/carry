@@ -32,9 +32,20 @@ We will get back:
 This is usually useful when having a decoded payload from json (a map) and
 we want to convert to an Elixir `struct`.
 
+This implementation does not use `String.to_atom/1` in order to not exhaust the
+BEAM atom table limits, since atoms are not garbage collected.
+
+I was using `exconstrutor`, however I noticed that it seems to generate new
+atoms in some corner cases.
+See https://github.com/appcues/exconstructor/issues/25 to get more context.
+
 ### Credits
 
 Thanks to to the https://hex.pm/packages/poison library for *heavy* influence =)
+
+### **NOTE**
+
+If you are using `Poison`, you can just do `Poison.decode(json_string, as: %YourStruct)`
 
 ## Installation
 
