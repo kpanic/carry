@@ -13,4 +13,9 @@ defmodule CarryTest do
     assert Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{}) ==
              %Instrument{carillon: "sound"}
   end
+
+  test "Carry.on/1 with atom values" do
+    assert Carry.on(%{"carillon" => :sound, "marimba" => :percussion}, %Instrument{}) ==
+             %Instrument{carillon: :sound}
+  end
 end
