@@ -1,13 +1,20 @@
 defmodule Carry do
   @moduledoc """
-  Carry transforms a map in this form:
-
-  %{"hello" => "world} to the equivalent struct
-
-  It transforms only the atom keys present in the provided struct
-
+  Carry transforms a map to the corresponding Elixir struct:
   """
 
+  @doc """
+  Transform the given map to the corresponding struct
+  Example:
+
+  iex> defmodule Instrument do
+    defstruct [:carillon]
+  end
+
+  iex> Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{})
+  %Instrument{carillon: "sound"}
+
+  """
   @spec on(map(), map()) :: map()
   def on(map, %module{} = struct) do
     new_map =
