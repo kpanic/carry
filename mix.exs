@@ -37,7 +37,6 @@ defmodule Carry.MixProject do
         "lib",
         "LICENSE",
         "mix.exs",
-        "mix.lock",
         "README.md"
       ],
       maintainers: ["Marco Milanesi"],
