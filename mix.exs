@@ -21,7 +21,10 @@ defmodule Carry.MixProject do
   end
 
   defp deps do
-    [{:ex_doc, ">= 0.0.0", only: :dev}]
+    [
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:dialyxir, "~> 1.0.0-rc", only: :dev, runtime: false}
+    ]
   end
 
   defp description() do
