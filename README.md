@@ -45,7 +45,7 @@ Thanks to to the https://hex.pm/packages/poison library for *heavy* influence =)
 
 ### **NOTE**
 
-If you are using `Poison`, you can just do `Poison.decode(json_string, as: %YourStruct)`
+If you are using `Poison`, you can just do `Poison.decode(json_string, as: %YourStruct{})`
 
 ## Installation
 
