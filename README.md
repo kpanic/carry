@@ -17,10 +17,17 @@ For example, given this `struct`:
   end
 ```
 
-by invoking the function:
+by invoking the function with the expanded struct:
 
 ```elixir
 Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{})
+```
+
+or with the atom representing the struct
+
+```elixir
+iex> Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, Instrument)
+%Instrument{carillon: "sound"}
 ```
 
 We will get back:
