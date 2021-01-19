@@ -16,11 +16,14 @@ defmodule Carry do
   %Instrument{carillon: "sound"}
 
   """
-  @spec on(map(), struct() | atom()) :: struct()
-  def on(map, %module{}), do: map_to_struct(map, module)
-  def on(map, module) when is_atom(module), do: map_to_struct(map, module)
+  @spec on(map() | struct(), struct() | atom()) :: struct()
+  def on(map_or_struct, %module{}), do: convert_to_struct(map_or_struct, module)
+  def on(map_or_struct, module) when is_atom(module), do: convert_to_struct(map_or_struct, module)
 
-  defp map_to_struct(map, module) do
+  defp convert_to_struct(struct, module) when is_struct(struct),
+    do: struct(module, Map.from_struct(struct))
+
+  defp convert_to_struct(map, module) do
     struct = struct(module)
 
     new_map =

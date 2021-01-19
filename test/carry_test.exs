@@ -36,4 +36,17 @@ defmodule CarryTest do
                %Instrument{carillon: :sound}
     end
   end
+
+  describe "on struct payload" do
+    test "Carry.on/1" do
+      assert Carry.on(%Instrument{carillon: "sound"}, Instrument) == %Instrument{
+               carillon: "sound"
+             }
+    end
+
+    test "Carry.on/1 with atom values" do
+      assert Carry.on(%Instrument{carillon: :sound}, Instrument) ==
+               %Instrument{carillon: :sound}
+    end
+  end
 end

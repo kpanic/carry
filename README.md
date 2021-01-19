@@ -20,7 +20,8 @@ For example, given this `struct`:
 by invoking the function with the expanded struct:
 
 ```elixir
-Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{})
+iex> Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, %Instrument{})
+%Instrument{carillon: "sound"}
 ```
 
 or with the atom representing the struct
@@ -30,11 +31,14 @@ iex> Carry.on(%{"carillon" => "sound", "marimba" => "percussion"}, Instrument)
 %Instrument{carillon: "sound"}
 ```
 
-We will get back:
+or as a syntactic sugar functionality
 
 ```elixir
+iex> Carry.on(%Instrument{carillon: "sound"}, Instrument)
 %Instrument{carillon: "sound"}
 ```
+
+which will just call `struct(module, Map.from_struct(struct))` under the hood
 
 This is usually useful when having a decoded payload from json (a map) and
 we want to convert to an Elixir `struct`.
